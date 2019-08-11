@@ -85,11 +85,13 @@ class Point {
     Point(this.x,this.y); 
     void printInfo() => print('($x, $y)'); 
     static void printZValue() => print('$factor'); }
-    var p = new Point(100,200); // new 关键字可以省略 
-    p.printInfo(); // 输出(100, 200); 
-    Point.factor = 10; 
-    Point.printZValue(); // 输出10
+    
 }
+
+var p = new Point(100,200); // new 关键字可以省略 
+p.printInfo(); // 输出(100, 200); 
+Point.factor = 10; 
+Point.printZValue(); // 输出10
 ```
 
 有时候类的实例化需要根据参数提供多种初始化方式。除了可选命名参数和可选参数之外，Dart还提供了**命名构造函数**的方式，使得类的实例化过程语义更清晰。
@@ -100,13 +102,14 @@ class Point {
 
 ```dart
 class Point { 
-	num x, y, z;
- 	Point(this.x, this.y) : z = 0; // 初始化变量z 
+    num x, y, z;
+    Point(this.x, this.y) : z = 0; // 初始化变量z 
     Point.bottom(num x) : this(x, 0); // 重定向构造函数 
-    void printInfo() => print('($x,$y,$z)'); }
-	var p = Point.bottom(100); 
-	p.printInfo(); // 输出(100,0,0)
 }
+
+void printInfo() => print('($x,$y,$z)'); }
+var p = Point.bottom(100); 
+p.printInfo(); // 输出(100,0,0)
 ```
 
 ### 复用
