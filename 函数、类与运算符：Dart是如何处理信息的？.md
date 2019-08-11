@@ -105,9 +105,9 @@ class Point {
     num x, y, z;
     Point(this.x, this.y) : z = 0; // 初始化变量z 
     Point.bottom(num x) : this(x, 0); // 重定向构造函数 
+    void printInfo() => print('($x,$y,$z)'); }
 }
 
-void printInfo() => print('($x,$y,$z)'); }
 var p = Point.bottom(100); 
 p.printInfo(); // 输出(100,0,0)
 ```
